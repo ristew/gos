@@ -1,0 +1,7 @@
+(use std.math)
+
+(def x (math.sin (* 2.f math.pi))) # num
+
+(def log (var) (print "$var.name $var)) # lambda 1
+
+(log x)
