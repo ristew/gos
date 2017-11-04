@@ -26,8 +26,8 @@ impl Lexer {
 }
 
 fn tokenize(str: String) -> Vec<String> {
-    let mut results = vec![];
-    let re = Regex::new(r###"[\s,]*([()']|"(?:\\.|[^\\"])*"|#.*|[^\s,()'"]*"###).unwrap();
+    let mut results = Vec::new();
+    let re = Regex::new(r###"[\s,]*([()'\.]|"(?:\\.|[^\\"])*"|#.*|[^\s,()'"]*"###).unwrap();
     for cap in re.captures_iter(&str) {
         let group = match cap.get(1) {
             Some(mtch) => mtch.as_str(),
